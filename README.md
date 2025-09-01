@@ -1,39 +1,43 @@
-# Secure-File-Storage-Using-Hybrid-Cryptography
+🔒 Secure File Storage System
 
-## Objective: To Achieve a secure plateform for storing of files on Cloud using Hybrid Cryptography.</br>
+A secure file storage and sharing platform built with Python (Flask) and Hybrid Cryptography (AES + RSA). The system ensures that uploaded files are encrypted before storage and can only be decrypted with the correct user key. This project demonstrates Zero Trust Data Security principles, aligning with real-world needs for data confidentiality, availability, and resilience.
 
-# Methodology
+🚀 Features
 
-To achieve the above goal, the following methodology needs to be followed:</br>
-1. Load the file on the server.</br>
-2. Dividing the uploaded file into N parts.</br>
-3. Encrypting all the parts of the file using any one of the selected algorithms (Algorithm is changed with every part in round robin fashion).</br>
-4. The keys for cryptography algorithms is then secured using a different algorithm and the key for this algorithm is provided to the user as public key.</br>
+Hybrid Cryptography
 
-After the above 4 steps you will have a N files which are in encrypted form which are stored on the server and a key which is downloaded as public key for decrypting the file and downloading it.</br>
+AES for fast, bulk data encryption.
 
-To restore the file, follow the following steps:</br>
-1. Load the key on the server.</br>
-2. Decrypt the keys of the algorithms.</br>
-3. Decrypt all the N parts of the file using the same algorithms which were used to encrypt them.</br>
-4. Combine all the N parts to form the original file and provide it to the user for downloading.</br>
+RSA for secure key exchange.
 
-# How to Run
+User Authentication
 
-**NOTE:** The project is based on Python 2.7.15 plateform running it on any other plateform might create some issues.</br>
+Secure login with hashed passwords (Flask sessions / JWT).
 
-Step 1: Install Requirements</br>
-`pip install -r requirements.txt`</br>
+File Operations
 
-Step 2: Run the application</br>
-`python app.py`</br>
+Upload, encrypt, download, and decrypt files securely.
 
-Step 3: Visit the localhost from your browser</br>
+Cloud Backup (Optional)
 
-Step 4: Enjoy :)
- 
-[//]: <> (*IF YOU ENCOUNTER ANY BUGS OR FOR ANY SUGGESTIONS REGARDING THE IMPROVEMENT OF THE PROJECT FEEL FREE TO CONTACT ME :**)
+Store encrypted files on AWS S3 / Google Cloud Storage.
 
-**THE PROJECT HAS ENCOUNTERED A BUG BECAUSE OF THE CRYPTOGRAPHY LIBRARY BEING UPDATED. IF YOU ARE INTRESTED IN COLLABORATING TO IMPROVE THIS PROJECT FEEL FREE TO CONTACT ME :**
+Logging & Monitoring
 
-Shivang Srivastava	-	shivang.8@geu.ac.in<br/>
+Tracks file operations and alerts on failed authentication attempts.
+
+Scalable Design
+
+Modular backend that can be extended for enterprise use.
+
+🛠️ Tech Stack
+
+Languages: Python
+
+Frameworks: Flask, Cryptography (PyCrypto / Cryptography library)
+
+Frontend: HTML, CSS, JavaScript (Bootstrap)
+
+Database: SQLite / MySQL (for user authentication & logs)
+
+Optional Cloud: AWS S3 / GCP Cloud Storage
